@@ -403,7 +403,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-16 px-4">
