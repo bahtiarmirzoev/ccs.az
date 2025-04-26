@@ -41,30 +41,30 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div className="container relative z-10">
-          <div className="flex flex-col items-center text-center px-4">
+        <div className="container mx-auto relative z-10">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-4">
             <div className="inline-flex items-center px-4 py-1.5 mb-8 text-xs font-medium rounded-full bg-white/10 text-cyan-50 backdrop-blur-sm border border-white/20">
               <span className="relative px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white mr-3">
                 CCS.AZ
               </span>
-              INNOVATIVE CONSTRUCTION SOLUTIONS
+              İNNOVATİV TİKİNTİ HƏLLƏRİ
             </div>
-            <h1 className="mb-8 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white max-w-4xl leading-tight">
-              Building the{" "}
+            <h1 className="mb-8 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
+              Gələcəyi{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">
-                future together
+                birlikdə qururuq
               </span>
             </h1>
             <p className="mb-10 max-w-2xl text-lg sm:text-xl text-cyan-50/90 leading-relaxed">
-              Caspian Construction Systems is Azerbaijan's leading provider of
-              innovative construction materials and solutions since 2012.
+              Xəzər Tikinti Sistemləri 2012-ci ildən bəri Azərbaycanın innovativ
+              tikinti materialları və həllərinin aparıcı təchizatçısıdır.
             </p>
             <div className="flex flex-wrap gap-5 justify-center">
               <Button
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-white to-cyan-50 text-blue-900 hover:from-cyan-50 hover:to-white hover:text-blue-800 shadow-lg shadow-blue-900/20"
               >
-                Our Products
+                Məhsullarımız
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 variant="outline"
                 className="rounded-full text-white border-white/60 hover:bg-white/10 hover:border-white"
               >
-                Contact Us
+                Bizimlə Əlaqə
               </Button>
             </div>
           </div>
@@ -105,28 +105,29 @@ export default function AboutPage() {
       </section>
 
       {/* Company history */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container">
+      <section className="py-24 relative overflow-hidden">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid gap-16 md:grid-cols-2 items-center">
-            <div className="order-2 md:order-1 px-4 md:px-0">
+            <div className="order-2 md:order-1 px-4 md:px-6">
               <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium rounded-full bg-blue-50 text-blue-700 shadow-sm">
-                OUR STORY
+                BİZİM HEKAYƏMİZ
               </div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-slate-900 leading-tight">
-                Over a decade of innovation and excellence
+                On ildən artıq innovasiya və mükəmməllik
               </h2>
               <div className="space-y-6 text-slate-600">
                 <p className="leading-relaxed text-lg">
-                  Caspian Construction Systems was founded in 2012 by a team of
-                  experienced specialists in the field of construction
-                  chemicals. What began as a small operation has grown into one
-                  of Azerbaijan's leading providers of innovative construction
-                  solutions.
+                  Xəzər Tikinti Sistemləri 2012-ci ildə tikinti kimyasalları
+                  sahəsində təcrübəli mütəxəssislər komandası tərəfindən
+                  qurulmuşdur. Kiçik bir əməliyyat kimi başlayan şirkət,
+                  Azərbaycanın innovativ tikinti həllərinin aparıcı
+                  təchizatçılarından birinə çevrilmişdir.
                 </p>
                 <p className="leading-relaxed text-lg">
-                  Our founders recognized a gap in the market for high-quality,
-                  reliable construction materials that could meet the specific
-                  needs of projects in the Caspian region.
+                  Təsisçilərimiz Xəzər regionundakı layihələrin xüsusi
+                  ehtiyaclarını qarşılaya biləcək yüksək keyfiyyətli, etibarlı
+                  tikinti materialları üçün bazarda boşluq olduğunu müəyyən
+                  etdilər.
                 </p>
 
                 <div className="grid grid-cols-2 gap-6 mt-10">
@@ -135,7 +136,7 @@ export default function AboutPage() {
                       200+
                     </div>
                     <p className="text-slate-700 font-medium">
-                      Innovative Products
+                      İnnovativ Məhsul
                     </p>
                   </div>
                   <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl shadow-sm border border-blue-100/50 hover:shadow-md transition-shadow">
@@ -143,24 +144,24 @@ export default function AboutPage() {
                       11
                     </div>
                     <p className="text-slate-700 font-medium">
-                      Product Categories
+                      Məhsul Kateqoriyası
                     </p>
                   </div>
                 </div>
 
                 <div className="pt-6">
                   <Button className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-900/10">
-                    Learn More
+                    Daha Ətraflı
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </div>
             </div>
-            <div className="order-1 md:order-2 relative px-4 md:px-0">
+            <div className="order-1 md:order-2 relative px-4 md:px-6">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/placeholder.svg?height=600&width=800"
-                  alt="CCS History"
+                  alt="CCS Tarixi"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
@@ -168,10 +169,10 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
                   <div className="text-sm font-medium mb-1 text-cyan-200">
-                    ESTABLISHED 2012
+                    2012-Cİ İLDƏ QURULUB
                   </div>
                   <div className="text-xl font-bold">
-                    Our Journey of Excellence
+                    Mükəmməllik Səyahətimiz
                   </div>
                 </div>
               </div>
@@ -181,45 +182,45 @@ export default function AboutPage() {
       </section>
 
       {/* Company values */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container">
+      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 px-4">
             <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium rounded-full bg-blue-50 text-blue-700 shadow-sm">
-              OUR VALUES
+              DƏYƏRLƏRİMİZ
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-slate-900">
-              What Drives Us Forward
+              Bizi İrəli Aparan Nədir
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg">
-              At Caspian Construction Systems, our values guide everything we
-              do, from product development to customer service.
+              Xəzər Tikinti Sistemlərində dəyərlərimiz məhsul inkişafından
+              müştəri xidmətinə qədər etdiyimiz hər şeyə rəhbərlik edir.
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-4">
             {[
               {
-                title: "Quality",
+                title: "Keyfiyyət",
                 description:
-                  "We never compromise on the quality of our products and services.",
+                  "Məhsul və xidmətlərimizin keyfiyyətindən heç vaxt güzəştə getmirik.",
                 icon: <Award className="h-8 w-8 text-cyan-600" />,
               },
               {
-                title: "Innovation",
+                title: "İnnovasiya",
                 description:
-                  "We continuously seek new ways to improve and innovate in our field.",
+                  "Sahəmizdə təkmilləşdirmək və yenilik etmək üçün daim yeni yollar axtarırıq.",
                 icon: <Target className="h-8 w-8 text-blue-600" />,
               },
               {
-                title: "Reliability",
+                title: "Etibarlılıq",
                 description:
-                  "Our customers can always count on us to deliver on our promises.",
+                  "Müştərilərimiz həmişə vədlərimizi yerinə yetirəcəyimizə güvənə bilərlər.",
                 icon: <Clock className="h-8 w-8 text-indigo-600" />,
               },
               {
-                title: "Customer Focus",
+                title: "Müştəri Fokuslu",
                 description:
-                  "We put our customers at the center of everything we do.",
+                  "Müştərilərimizi etdiyimiz hər şeyin mərkəzinə qoyuruq.",
                 icon: <Users className="h-8 w-8 text-purple-600" />,
               },
             ].map((item, index) => (
@@ -245,46 +246,46 @@ export default function AboutPage() {
       </section>
 
       {/* Team section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 text-white">
-        <div className="container">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 text-white">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 px-4">
             <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium rounded-full bg-white/10 text-cyan-50 backdrop-blur-sm border border-white/20">
-              OUR TEAM
+              KOMANDAMIZ
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white">
-              Meet Our Leadership
+              Rəhbərliyimizlə Tanış Olun
             </h2>
             <p className="text-cyan-50 max-w-2xl mx-auto leading-relaxed text-lg">
-              Our experienced team of professionals is dedicated to providing
-              the best solutions for your construction needs.
+              Təcrübəli mütəxəssislərdən ibarət komandamız tikinti
+              ehtiyaclarınız üçün ən yaxşı həlləri təmin etməyə həsr olunub.
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-4">
             {[
               {
-                name: "Eldar Mammadov",
-                position: "Chief Executive Officer",
+                name: "Eldar Məmmədov",
+                position: "Baş İcraçı Direktor",
               },
               {
-                name: "Leyla Aliyeva",
-                position: "Technical Director",
+                name: "Leyla Əliyeva",
+                position: "Texniki Direktor",
               },
               {
-                name: "Farid Hasanov",
-                position: "Head of Research & Development",
+                name: "Fərid Həsənov",
+                position: "Tədqiqat və İnkişaf Rəhbəri",
               },
               {
-                name: "Nigar Ismayilova",
-                position: "Sales Director",
+                name: "Nigar İsmayılova",
+                position: "Satış Direktoru",
               },
               {
-                name: "Rashad Guliyev",
-                position: "Operations Manager",
+                name: "Rəşad Quliyev",
+                position: "Əməliyyat Meneceri",
               },
               {
-                name: "Aysel Mammadova",
-                position: "Customer Service Manager",
+                name: "Aysel Məmmədova",
+                position: "Müştəri Xidmətləri Meneceri",
               },
             ].map((member, index) => (
               <Card
@@ -315,25 +316,25 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements */}
-      <section className="py-20 bg-white">
-        <div className="container">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-4">
             {[
               {
                 number: "500+",
-                label: "Projects Completed",
+                label: "Tamamlanmış Layihə",
               },
               {
                 number: "50+",
-                label: "Expert Team Members",
+                label: "Ekspert Komanda Üzvü",
               },
               {
                 number: "12",
-                label: "Years of Experience",
+                label: "İllik Təcrübə",
               },
               {
                 number: "98%",
-                label: "Client Satisfaction",
+                label: "Müştəri Məmnuniyyəti",
               },
             ].map((stat, index) => (
               <div key={index} className="text-center">
@@ -348,25 +349,26 @@ export default function AboutPage() {
       </section>
 
       {/* CTA section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container">
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="container mx-auto max-w-6xl">
           <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-10 md:p-12 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 text-white">
                 <h2 className="text-3xl font-bold tracking-tight mb-4">
-                  Ready to Work With Us?
+                  Bizimlə İşləməyə Hazırsınız?
                 </h2>
                 <p className="mb-8 text-blue-50 leading-relaxed">
-                  Contact our team today to learn more about our products and
-                  how we can help with your construction projects.
+                  Məhsullarımız və tikinti layihələrinizə necə kömək edə
+                  biləcəyimiz haqqında daha çox məlumat əldə etmək üçün
+                  komandamızla bu gün əlaqə saxlayın.
                 </p>
                 <ul className="space-y-4 mb-8">
                   {[
-                    "Professional consultation",
-                    "Customized solutions",
-                    "Technical support",
-                    "Quality assurance",
-                    "After-sales service",
+                    "Peşəkar məsləhət",
+                    "Fərdi həllər",
+                    "Texniki dəstək",
+                    "Keyfiyyət təminatı",
+                    "Satışdan sonra xidmət",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-cyan-300 shrink-0" />
@@ -378,22 +380,22 @@ export default function AboutPage() {
                   size="lg"
                   className="rounded-full bg-white text-blue-700 hover:bg-blue-50 shadow-lg shadow-blue-900/20"
                 >
-                  Contact Us
+                  Bizimlə Əlaqə
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
               <div className="relative h-64 md:h-auto">
                 <Image
                   src="/placeholder.svg?height=600&width=500"
-                  alt="CCS Projects"
+                  alt="CCS Layihələri"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
                   <div className="text-white">
-                    <p className="text-sm font-medium mb-2">OUR PROJECTS</p>
+                    <p className="text-sm font-medium mb-2">LAYİHƏLƏRİMİZ</p>
                     <h3 className="text-xl font-bold">
-                      Over 500 successful projects across Azerbaijan
+                      Azərbaycan boyunca 500-dən çox uğurlu layihə
                     </h3>
                   </div>
                 </div>
@@ -403,18 +405,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 px-4">
             <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium rounded-full bg-blue-50 text-blue-700 shadow-sm">
-              CLIENT TESTIMONIALS
+              MÜŞTƏRİ RƏYLƏRİ
             </div>
             <h2 className="text-4xl font-bold tracking-tight mb-6 text-slate-900">
-              What Our Clients Say
+              Müştərilərimiz Nə Deyir
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg">
-              Don't just take our word for it. Here's what some of our satisfied
-              clients have to say about our services.
+              Sadəcə bizim sözümüzə inanmayın. Bəzi məmnun müştərilərimizin
+              xidmətlərimiz haqqında dediklərinə baxın.
             </p>
           </div>
 
@@ -422,24 +424,27 @@ export default function AboutPage() {
             {[
               {
                 quote:
-                  "CCS provided exceptional technical support for our waterproofing needs. Their products and expertise were instrumental in the success of our project.",
-                name: "Farid Mammadov",
-                company: "Baku Construction Group",
+                  "CCS su keçirməzlik ehtiyaclarımız üçün müstəsna texniki dəstək təmin etdi. Onların məhsulları və təcrübəsi layihəmizin uğurunda mühüm rol oynadı.",
+                name: "Fərid Məmmədov",
+                company: "Bakı Tikinti Qrupu",
               },
               {
                 quote:
-                  "The quality of CCS products is outstanding. We've been using their floor coverings for years, and they consistently deliver excellent results.",
-                name: "Leyla Hasanova",
-                company: "Modern Interiors LLC",
+                  "CCS məhsullarının keyfiyyəti mükəmməldir. İllərdir onların döşəmə örtüklərindən istifadə edirik və onlar daim mükəmməl nəticələr təqdim edirlər.",
+                name: "Leyla Həsənova",
+                company: "Modern İnteriors MMC",
               },
               {
                 quote:
-                  "The team at CCS went above and beyond to help us find the right solution for our sound insulation requirements. Highly recommended!",
-                name: "Rashad Aliyev",
-                company: "Caspian Developers",
+                  "CCS-dəki komanda səs izolyasiyası tələblərimiz üçün düzgün həll tapmağımıza kömək etmək üçün əlindən gələni etdi. Çox tövsiyə olunur!",
+                name: "Rəşad Əliyev",
+                company: "Xəzər Developers",
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="overflow-hidden">
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-lg transition-all"
+              >
                 <CardContent className="p-8">
                   <div className="mb-6 text-5xl text-cyan-600">"</div>
                   <p className="text-slate-700 mb-8 italic leading-relaxed">
@@ -466,11 +471,11 @@ export default function AboutPage() {
       </section>
 
       {/* Partners */}
-      <section className="py-16 bg-slate-50">
-        <div className="container">
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center px-4">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-8">
-              Trusted by Leading Companies
+            <h3 className="text-2xl font-semibold text-slate-900 mb-12">
+              Aparıcı Şirkətlər Tərəfindən Etibar Edilir
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
               {[...Array(6)].map((_, i) => (
@@ -480,7 +485,7 @@ export default function AboutPage() {
                 >
                   <div className="w-32 h-16 bg-slate-200 rounded flex items-center justify-center">
                     <span className="text-slate-500 font-medium">
-                      Partner {i + 1}
+                      Tərəfdaş {i + 1}
                     </span>
                   </div>
                 </div>
