@@ -44,10 +44,9 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
-        {/* Логотип слева */}
         <Link href="/" className="relative group z-10">
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-            MySite
+            CCS.AZ
           </span>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </Link>
@@ -57,11 +56,11 @@ export function Navbar() {
           <NavigationMenu>
             <NavigationMenuList className="flex space-x-4">
               {[
-                { href: "/", label: "Главная" },
-                { href: "/about", label: "О нас" },
-                { href: "/services", label: "Услуги" },
-                { href: "/contact", label: "Контакты" },
-                { href: "/products", label: "Продукты" },
+                { href: "/", label: "Əsas" },
+                { href: "/about", label: "Haqqimizda" },
+                { href: "/services", label: "Xidmətlər" },
+                { href: "/contact", label: "Əlaqə" },
+                { href: "/products", label: "Məhsullarimiz" },
               ].map((item) => (
                 <NavigationMenuItem key={item.href}>
                   <Link href={item.href} legacyBehavior passHref>
@@ -126,11 +125,11 @@ export function Navbar() {
 
                 <div className="flex flex-col space-y-4">
                   {[
-                    { href: "/", label: "Главная" },
-                    { href: "/about", label: "О нас" },
-                    { href: "/services", label: "Услуги" },
-                    { href: "/contact", label: "Контакты" },
-                    { href: "/products", label: "Продукты" },
+                    { href: "/", label: "Əsas" },
+                    { href: "/about", label: "Haqqimizda" },
+                    { href: "/services", label: "Xidmətlər" },
+                    { href: "/contact", label: "Əlaqə" },
+                    { href: "/products", label: "Məhsullarimiz" },
                   ].map((item) => (
                     <SheetClose asChild key={item.href}>
                       <Link
