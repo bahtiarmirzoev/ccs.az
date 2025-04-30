@@ -68,7 +68,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="mb-10 max-w-2xl text-lg sm:text-xl text-cyan-50/90 leading-relaxed">
-              Xəzər Tikinti Sistemləri 2012-ci ildən bəri Azərbaycanın innovativ
+              Caspian Construction Systems 2012-ci ildən bəri Azərbaycanın innovativ
               tikinti materialları və həllərinin aparıcı təchizatçısıdır.
             </p>
             <div className="flex flex-wrap gap-5 justify-center">
@@ -129,7 +129,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-slate-600">
                 <p className="leading-relaxed text-lg">
-                  Xəzər Tikinti Sistemləri 2012-ci ildə tikinti kimyasalları
+                  Caspian Construction Systems 2012-ci ildə tikinti kimyasalları
                   sahəsində təcrübəli mütəxəssislər komandası tərəfindən
                   qurulmuşdur. Kiçik bir əməliyyat kimi başlayan şirkət,
                   Azərbaycanın innovativ tikinti həllərinin aparıcı
@@ -204,7 +204,7 @@ export default function AboutPage() {
               Bizi İrəli Aparan Nədir
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg">
-              Xəzər Tikinti Sistemlərində dəyərlərimiz məhsul inkişafından
+              Caspian Construction Systems-də dəyərlərimiz məhsul inkişafından
               müştəri xidmətinə qədər etdiyimiz hər şeyə rəhbərlik edir.
             </p>
           </div>

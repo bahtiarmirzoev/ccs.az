@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { User, LogIn, Menu, X } from "lucide-react";
 import {
@@ -17,10 +18,19 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +40,8 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <motion.nav
@@ -60,39 +72,103 @@ export function Navbar() {
                 { href: "/about", label: "Haqqimizda" },
                 { href: "/services", label: "Xidmətlər" },
                 { href: "/contact", label: "Əlaqə" },
-                { href: "/products", label: "Məhsullarimiz" },
               ].map((item) => (
                 <NavigationMenuItem key={item.href}>
                   <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink className="group relative px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300">
+                    <NavigationMenuLink 
+                      className={cn(
+                        "group relative px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300",
+                        isActive(item.href) && "text-blue-600"
+                      )}
+                    >
                       {item.label}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                      <span className={cn(
+                        "absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300",
+                        isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                      )}></span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
               ))}
+
+              {/* Выпадающее меню "Məhsullarimiz" */}
+              <NavigationMenuItem>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className={cn(
+                      "group relative px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300",
+                      pathname.startsWith("/products") && "text-blue-600"
+                    )}>
+                      Məhsullarimiz
+                      <span className={cn(
+                        "absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300",
+                        pathname.startsWith("/products") ? "w-full" : "w-0 group-hover:w-full"
+                      )}></span>
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="mt-2 shadow-lg rounded-md border p-2 bg-white">
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href="/products?category=izolyasiya"
+                        className={cn(
+                          "w-full cursor-pointer",
+                          pathname === "/products" && searchParams.get("category") === "izolyasiya" && "text-blue-600"
+                        )}
+                      >
+                        İzolyasiya Materialları
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link 
+                        href="/products?category=temir"
+                        className={cn(
+                          "w-full cursor-pointer",
+                          pathname === "/products" && searchParams.get("category") === "temir" && "text-blue-600"
+                        )}
+                      >
+                        Təmir və Tikinti
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href="/products?category=aksesuar"
+                        className={cn(
+                          "w-full cursor-pointer",
+                          pathname === "/products" && searchParams.get("category") === "aksesuar" && "text-blue-600"
+                        )}
+                      >
+                        Aksesuar və Alətlər
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
 
         {/* Кнопки справа */}
         <div className="hidden md:flex items-center space-x-3 z-10">
-          <Button
-            variant="outline"
-            size="sm"
-            className="border-blue-300 text-blue-600 hover:bg-blue-50"
-          >
-            <LogIn className="mr-2 h-4 w-4" />
-            Войти
-          </Button>
+          <Link href="/sign-in">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-blue-300 text-blue-600 hover:bg-blue-50"
+            >
+              <LogIn className="mr-2 h-4 w-4" />
+              Giriş
+            </Button>
+          </Link>
 
-          <Button
-            size="sm"
-            className="bg-blue-600 hover:bg-blue-700 text-white"
-          >
-            <User className="mr-2 h-4 w-4" />
-            Регистрация
-          </Button>
+          <Link href="/sign-up">
+            <Button
+              size="sm"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+            >
+              <User className="mr-2 h-4 w-4" />
+              Registrasiya
+            </Button>
+          </Link>
         </div>
 
         {/* Мобильное меню */}
@@ -134,7 +210,10 @@ export function Navbar() {
                     <SheetClose asChild key={item.href}>
                       <Link
                         href={item.href}
-                        className="px-2 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
+                        className={cn(
+                          "px-2 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors",
+                          isActive(item.href) && "text-blue-600 bg-blue-50"
+                        )}
                       >
                         {item.label}
                       </Link>
@@ -143,18 +222,26 @@ export function Navbar() {
                 </div>
 
                 <div className="mt-auto pt-6 flex flex-col space-y-3">
-                  <Button
-                    variant="outline"
-                    className="w-full border-blue-300 text-blue-600 hover:bg-blue-50"
-                  >
-                    <LogIn className="mr-2 h-4 w-4" />
-                    Войти
-                  </Button>
+                  <SheetClose asChild>
+                    <Link href="/sign-in">
+                      <Button
+                        variant="outline"
+                        className="w-full border-blue-300 text-blue-600 hover:bg-blue-50"
+                      >
+                        <LogIn className="mr-2 h-4 w-4" />
+                        Giriş
+                      </Button>
+                    </Link>
+                  </SheetClose>
 
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                    <User className="mr-2 h-4 w-4" />
-                    Регистрация
-                  </Button>
+                  <SheetClose asChild>
+                    <Link href="/sign-up">
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        <User className="mr-2 h-4 w-4" />
+                        Registrasiya
+                      </Button>
+                    </Link>
+                  </SheetClose>
                 </div>
               </div>
             </SheetContent>

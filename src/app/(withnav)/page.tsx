@@ -76,7 +76,7 @@ export default function Home() {
             İNNOVATİV TİKİNTİ HƏLLƏRİ
           </div>
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Xəzər Tikinti Sistemləri
+            Caspian Construction Systems
           </h1>
           <p className="mb-10 max-w-[700px] text-lg sm:text-xl text-blue-50/90 leading-relaxed">
             Azərbaycanın aparıcı innovativ tikinti məhsulları və həlləri
@@ -150,10 +150,10 @@ export default function Home() {
                 HAQQIMIZDA
               </div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-                Xəzər Tikinti Sistemləri
+                Caspian Construction Systems
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg">
-                "Xəzər Tikinti Sistemləri" 2012-ci ildə sənaye kimyasalları
+                "Caspian Construction Systems" 2012-ci ildə sənaye kimyasalları
                 sahəsində təcrübəli mütəxəssislər tərəfindən qurulmuşdur. 11
                 kateqoriyada 200-dən çox məhsulla, su keçirməzlikdən səs
                 izolyasiyasına, inyeksiya materiallarından döşəmə örtüklərinə
@@ -209,7 +209,7 @@ export default function Home() {
               Bizi İrəli Aparan Nədir
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg">
-              Xəzər Tikinti Sistemlərində dəyərlərimiz məhsul inkişafından
+              Caspian Construction Systems-də dəyərlərimiz məhsul inkişafından
               müştəri xidmətinə qədər etdiyimiz hər şeyə rəhbərlik edir.
             </p>
           </div>
