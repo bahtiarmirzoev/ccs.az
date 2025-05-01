@@ -37,66 +37,66 @@ export function Footer() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 pt-8 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="container mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-8 sm:pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center mb-6">
-              <div className="h-10 w-10 rounded-md bg-gradient-to-r from-cyan-600 to-blue-700 flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">C</span>
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="h-8 sm:h-10 w-8 sm:w-10 rounded-md bg-gradient-to-r from-cyan-600 to-blue-700 flex items-center justify-center mr-2 sm:mr-3">
+                <span className="text-white font-bold text-lg sm:text-xl">C</span>
               </div>
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900">
                 Caspian Construction Systems
               </h2>
             </div>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               Azərbaycanda tikinti materialları və həllərinin aparıcı
               təchizatçısı. Biz müştərilərimizə yüksək keyfiyyətli məhsullar və
               peşəkar xidmətlər təklif edirik.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 sm:space-x-3">
               <a
                 href="#"
-                className="h-9 w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
+                className="h-8 sm:h-9 w-8 sm:w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
               >
-                <Facebook size={18} />
+                <Facebook size={16} className="sm:w-[18px] sm:h-[18px]" />
               </a>
               <a
                 href="#"
-                className="h-9 w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
+                className="h-8 sm:h-9 w-8 sm:w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
               >
-                <Twitter size={18} />
+                <Twitter size={16} className="sm:w-[18px] sm:h-[18px]" />
               </a>
               <a
                 href="#"
-                className="h-9 w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
+                className="h-8 sm:h-9 w-8 sm:w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
               >
-                <Instagram size={18} />
+                <Instagram size={16} className="sm:w-[18px] sm:h-[18px]" />
               </a>
               <a
                 href="#"
-                className="h-9 w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
+                className="h-8 sm:h-9 w-8 sm:w-9 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors duration-300"
               >
-                <Linkedin size={18} />
+                <Linkedin size={16} className="sm:w-[18px] sm:h-[18px]" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center">
-              <span className="h-5 w-1 bg-cyan-600 rounded-full mr-2"></span>
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6 flex items-center">
+              <span className="h-4 sm:h-5 w-1 bg-cyan-600 rounded-full mr-2"></span>
               Sürətli Keçidlər
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Ana Səhifə
                 </Link>
@@ -104,11 +104,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Haqqımızda
                 </Link>
@@ -116,11 +116,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Xidmətlər
                 </Link>
@@ -128,11 +128,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/products"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Məhsullar
                 </Link>
@@ -140,11 +140,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/projects"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Layihələr
                 </Link>
@@ -152,11 +152,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Əlaqə
                 </Link>
@@ -166,19 +166,19 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center">
-              <span className="h-5 w-1 bg-cyan-600 rounded-full mr-2"></span>
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6 flex items-center">
+              <span className="h-4 sm:h-5 w-1 bg-cyan-600 rounded-full mr-2"></span>
               Xidmətlərimiz
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
                   href="/services#hydroisolation"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Hidroizolyasiya
                 </Link>
@@ -186,11 +186,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services#thermoisolation"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   İstilik İzolyasiyası
                 </Link>
@@ -198,11 +198,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services#finishing"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Bəzək Materialları
                 </Link>
@@ -210,11 +210,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services#flooring"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Döşəmə Örtükləri
                 </Link>
@@ -222,11 +222,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services#repair"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Təmir Materialları
                 </Link>
@@ -234,11 +234,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services#technical"
-                  className="text-gray-600 hover:text-cyan-600 flex items-center group"
+                  className="text-sm sm:text-base text-gray-600 hover:text-cyan-600 flex items-center group"
                 >
                   <ChevronRight
-                    size={16}
-                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="mr-2 text-cyan-600 group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
                   />
                   Texniki Dəstək
                 </Link>

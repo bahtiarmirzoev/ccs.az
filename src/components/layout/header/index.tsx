@@ -175,16 +175,16 @@ export function Navbar() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-blue-600">
+              <Button variant="ghost" size="icon" className="text-blue-600 hover:bg-blue-50">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[80%] sm:w-[350px] border-l border-blue-100"
+              className="w-[85%] sm:w-[350px] border-l border-blue-100 p-0"
             >
               <div className="flex flex-col h-full">
-                <div className="flex justify-between items-center mb-8">
+                <div className="flex justify-between items-center p-4 border-b border-blue-100">
                   <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                     CCS.AZ
                   </span>
@@ -192,38 +192,65 @@ export function Navbar() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="text-blue-600"
+                      className="text-blue-600 hover:bg-blue-50"
                     >
                       <X className="h-5 w-5" />
                     </Button>
                   </SheetClose>
                 </div>
 
-                <div className="flex flex-col space-y-4">
-                  {[
-                    { href: "/", label: "Əsas" },
-                    { href: "/about", label: "Haqqimizda" },
-                    { href: "/services", label: "Xidmətlər" },
-                    { href: "/contact", label: "Əlaqə" },
-                    { href: "/products", label: "Məhsullarimiz" },
-                  ].map((item) => (
-                    <SheetClose asChild key={item.href}>
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "px-2 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors",
-                          isActive(item.href) && "text-blue-600 bg-blue-50"
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    </SheetClose>
-                  ))}
+                <div className="flex-1 overflow-y-auto">
+                  <div className="p-4 space-y-1">
+                    {[
+                      { href: "/", label: "Əsas" },
+                      { href: "/about", label: "Haqqimizda" },
+                      { href: "/services", label: "Xidmətlər" },
+                      { href: "/contact", label: "Əlaqə" },
+                    ].map((item) => (
+                      <SheetClose asChild key={item.href}>
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors",
+                            isActive(item.href) && "text-blue-600 bg-blue-50"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+
+                    {/* Выпадающее меню для продуктов */}
+                    <div className="mt-2">
+                      <div className="px-4 py-2 text-sm font-medium text-gray-500">
+                        Məhsullarimiz
+                      </div>
+                      <div className="space-y-1">
+                        {[
+                          { href: "/products?category=izolyasiya", label: "İzolyasiya Materialları" },
+                          { href: "/products?category=temir", label: "Təmir və Tikinti" },
+                          { href: "/products?category=aksesuar", label: "Aksesuar və Alətlər" },
+                        ].map((item) => (
+                          <SheetClose asChild key={item.href}>
+                            <Link
+                              href={item.href}
+                              className={cn(
+                                "flex items-center px-8 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors",
+                                pathname === "/products" && searchParams.get("category") === item.href.split("=")[1] && "text-blue-600 bg-blue-50"
+                              )}
+                            >
+                              {item.label}
+                            </Link>
+                          </SheetClose>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="mt-auto pt-6 flex flex-col space-y-3">
+                <div className="p-4 border-t border-blue-100 space-y-3">
                   <SheetClose asChild>
-                    <Link href="/sign-in">
+                    <Link href="/sign-in" className="w-full">
                       <Button
                         variant="outline"
                         className="w-full border-blue-300 text-blue-600 hover:bg-blue-50"
@@ -235,7 +262,7 @@ export function Navbar() {
                   </SheetClose>
 
                   <SheetClose asChild>
-                    <Link href="/sign-up">
+                    <Link href="/sign-up" className="w-full">
                       <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                         <User className="mr-2 h-4 w-4" />
                         Registrasiya
