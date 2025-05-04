@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { motion } from "framer-motion"
-import { Search, Filter, ChevronDown } from "lucide-react"
+import { Search, Filter, ChevronDown, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/accordion"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 // Временные данные для демонстрации
 const categories = [
@@ -47,115 +48,166 @@ const brands = [
 const products = [
   {
     id: 1,
-    name: "Penosil Premium 750ml",
-    category: "izolyasiya",
-    brand: "Penosil",
-    price: 12.99,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uc3RydWN0aW9ufGVufDB8fDB8fHww",
+    name: "Premium Hidroizolyasiya",
+    category: "Hidroizolyasiya",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=Hidroizolyasiya",
+    description: "Yüksək keyfiyyətli hidroizolyasiya materialı",
+    price: "120 AZN",
   },
   {
     id: 2,
-    name: "Soudal Fix All 310ml",
-    category: "temir",
-    brand: "Soudal",
-    price: 8.99,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uc3RydWN0aW9ufGVufDB8fDB8fHww",
+    name: "İstilik İzolyasiya Paneli",
+    category: "İstilik İzolyasiyası",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=İstilik+İzolyasiyası",
+    description: "Effektiv istilik izolyasiyası üçün panel",
+    price: "85 AZN",
   },
-  // Добавьте больше продуктов по аналогии
+  {
+    id: 3,
+    name: "Dekorativ Plitka",
+    category: "Bəzək Materialları",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=Dekorativ+Plitka",
+    description: "Müasir dizayn üçün dekorativ plitka",
+    price: "45 AZN",
+  },
+  {
+    id: 4,
+    name: "Laminat Döşəmə",
+    category: "Döşəmə Materialları",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=Laminat+Döşəmə",
+    description: "Davamlı və gözəl laminat döşəmə",
+    price: "65 AZN",
+  },
+  {
+    id: 5,
+    name: "Rəngli Boya",
+    category: "Bəzək Materialları",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=Rəngli+Boya",
+    description: "Yüksək keyfiyyətli rəngli boya",
+    price: "35 AZN",
+  },
+  {
+    id: 6,
+    name: "Metal Profil",
+    category: "Konstruksiya Materialları",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=Metal+Profil",
+    description: "Güclü və davamlı metal profil",
+    price: "95 AZN",
+  }
 ]
 
 export default function ProductsPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("")
+  const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [selectedBrands, setSelectedBrands] = useState<string[]>([])
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 100])
   const [searchQuery, setSearchQuery] = useState("")
   const [sortBy, setSortBy] = useState("newest")
 
+  // Фильтрация продуктов
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      // Поиск по названию и описанию
+      const matchesSearch = searchQuery === "" || 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase())
+
+      // Фильтрация по категории
+      const matchesCategory = selectedCategory === "all" || 
+        product.category.toLowerCase() === selectedCategory.toLowerCase()
+
+      return matchesSearch && matchesCategory
+    })
+  }, [searchQuery, selectedCategory])
+
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Заголовок и поиск */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Məhsullar</h1>
-          <div className="flex gap-4">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <Input
-                type="text"
-                placeholder="Məhsul axtar..."
-                className="pl-10"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" className="md:hidden">
-                  <Filter className="h-4 w-4 mr-2" />
-                  Filter
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                  <SheetTitle>Filter</SheetTitle>
-                </SheetHeader>
-                <div className="mt-6">
-                  <FilterContent />
-                </div>
-              </SheetContent>
-            </Sheet>
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Sırala" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="newest">Ən yeni</SelectItem>
-                <SelectItem value="price-asc">Qiymət (artan)</SelectItem>
-                <SelectItem value="price-desc">Qiymət (azalan)</SelectItem>
-                <SelectItem value="name-asc">Ad (A-Z)</SelectItem>
-                <SelectItem value="name-desc">Ad (Z-A)</SelectItem>
-              </SelectContent>
-            </Select>
+    <div className="container mx-auto px-4 py-8">
+      {/* Hero Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Məhsullarımız</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Yüksək keyfiyyətli tikinti materialları və həlləri ilə layihələrinizi
+          həyata keçirin
+        </p>
+      </div>
+
+      {/* Search and Filter Section */}
+      <div className="flex flex-col md:flex-row gap-4 mb-8">
+        <div className="flex-1">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Input
+              placeholder="Məhsul axtar..."
+              className="pl-10"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
+        <div className="flex gap-4">
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Kateqoriya" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Bütün kateqoriyalar</SelectItem>
+              <SelectItem value="Hidroizolyasiya">Hidroizolyasiya</SelectItem>
+              <SelectItem value="İstilik İzolyasiyası">İstilik İzolyasiyası</SelectItem>
+              <SelectItem value="Bəzək Materialları">Bəzək Materialları</SelectItem>
+              <SelectItem value="Döşəmə Materialları">Döşəmə Materialları</SelectItem>
+              <SelectItem value="Konstruksiya Materialları">Konstruksiya Materialları</SelectItem>
+            </SelectContent>
+          </Select>
+          <Button variant="outline" className="flex items-center gap-2">
+            <Filter className="h-4 w-4" />
+            Filter
+          </Button>
+        </div>
+      </div>
 
-        <div className="flex gap-8">
-          {/* Фильтры (десктоп) */}
-          <div className="hidden md:block w-64 flex-shrink-0">
-            <FilterContent />
-          </div>
+      {/* Products Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {filteredProducts.map((product) => (
+          <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <CardHeader className="p-0">
+              <div className="aspect-video relative bg-gray-100">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </CardHeader>
+            <CardContent className="p-4">
+              <div className="text-sm text-cyan-600 mb-2">{product.category}</div>
+              <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
+              <p className="text-gray-600 text-sm mb-4">{product.description}</p>
+              <div className="text-lg font-semibold text-gray-900">{product.price}</div>
+            </CardContent>
+            <CardFooter className="p-4 pt-0">
+              <Button className="w-full bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800">
+                Ətraflı Məlumat
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
 
-          {/* Список продуктов */}
-          <div className="flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {products.map((product) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div className="aspect-square relative">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-medium text-gray-900 mb-1">{product.name}</h3>
-                    <p className="text-sm text-gray-500 mb-2">{product.brand}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-semibold text-blue-600">
-                        {product.price} ₼
-                      </span>
-                      <Button size="sm">Səbətə əlavə et</Button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+      {/* No Results Message */}
+      {filteredProducts.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-lg text-gray-600">Məhsul tapılmadı</p>
+        </div>
+      )}
+
+      {/* Pagination */}
+      <div className="flex justify-center mt-12">
+        <div className="flex gap-2">
+          <Button variant="outline">Əvvəlki</Button>
+          <Button variant="outline">1</Button>
+          <Button variant="outline">2</Button>
+          <Button variant="outline">3</Button>
+          <Button variant="outline">Sonrakı</Button>
         </div>
       </div>
     </div>
